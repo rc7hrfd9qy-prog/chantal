@@ -708,6 +708,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: rgba(250,247,242,0.85);
 }
 
+.book-card__praise {
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  font-style: italic;
+  color: rgba(250,247,242,0.5);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  padding-left: 0.85rem;
+  border-left: 1px solid rgba(196,129,76,0.4);
+}
+
 .book-card__badges {
   display: flex;
   flex-wrap: wrap;
@@ -1067,6 +1078,34 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   height: 6px;
   border-radius: 50%;
   background: var(--color-amber);
+}
+
+/* Podcast section in topics card */
+.topics-card__podcasts {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-sand);
+}
+
+.topics-card__pod-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+  margin-bottom: 0.65rem;
+}
+
+.topics-card__pod-item {
+  font-size: 0.85rem;
+  color: var(--color-ink-lt);
+  line-height: 1.6;
+  margin-bottom: 0.3rem;
+}
+
+.topics-card__pod-item em {
+  font-style: italic;
+  color: var(--color-ink);
 }
 
 /* =============================================================
