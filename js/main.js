@@ -177,13 +177,13 @@
       const rect = cover.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;  // 0–1
       const y = (e.clientY - rect.top) / rect.height;   // 0–1
-      const rotX = (y - 0.5) * -10; // -5 to 5 deg
-      const rotY = (x - 0.5) * 14;  // -7 to 7 deg
-      cover.style.transform = `rotateY(${rotY}deg) rotateX(${rotX}deg) scale(1.02)`;
+      const rotX = (y - 0.5) * -6; // subtle: -3 to 3 deg
+      const rotY = (x - 0.5) * 8;  // subtle: -4 to 4 deg
+      cover.style.transform = `rotateY(${rotY}deg) rotateX(${rotX}deg)`;
     });
 
     cover.addEventListener('mouseleave', () => {
-      cover.style.transform = 'rotateY(-8deg) rotateX(2deg)';
+      cover.style.transform = 'rotateY(-4deg) rotateX(1deg)';
     });
   });
 

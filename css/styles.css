@@ -1,6 +1,5 @@
 /* =============================================================
    CHANTAL MARTINEAU — PORTFOLIO WEBSITE
-   Sleek, modern, warm — editorial design with agave warmth
    ============================================================= */
 
 /* --- Custom Properties (Design Tokens) --- */
@@ -339,24 +338,24 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: var(--color-dark);
+  /* Drop in a photo: uncomment and set background-image: url('../images/hero.jpg'); */
+  background-color: var(--color-dark);
+  background-size: cover;
+  background-position: center;
 }
 
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 70% 40%, rgba(74,103,65,0.25) 0%, transparent 60%),
-              radial-gradient(ellipse at 20% 80%, rgba(196,129,76,0.2) 0%, transparent 50%),
-              linear-gradient(135deg, rgba(28,21,16,0.95) 0%, rgba(44,31,18,0.9) 100%);
+  background: linear-gradient(160deg, rgba(28,21,16,0.88) 0%, rgba(55,38,22,0.82) 100%);
 }
 
 .hero__pattern {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 80% 20%, rgba(196,129,76,0.08) 0%, transparent 40%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='0.8' fill='rgba(196,129,76,0.15)'/%3E%3C/svg%3E");
-  background-size: 100% 100%, 60px 60px;
+    radial-gradient(circle at 72% 28%, rgba(196,129,76,0.13) 0%, transparent 45%),
+    radial-gradient(circle at 22% 72%, rgba(196,129,76,0.07) 0%, transparent 40%);
 }
 
 .hero__content {
@@ -478,7 +477,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   aspect-ratio: 3/4;
   border-radius: 2px;
   overflow: hidden;
-  background: var(--color-brown-dk);
+  background: var(--color-cream-2);
   position: relative;
 }
 
@@ -487,10 +486,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   height: 100%;
 }
 
-.about__portrait-svg {
+.about__portrait-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .about__image-caption {
@@ -576,104 +576,41 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .book-card:nth-child(2) { transition-delay: 0.2s; }
 
 .book-card__cover {
-  perspective: 800px;
+  perspective: 900px;
 }
 
 .book-card__cover-art {
   position: relative;
-  height: 320px;
   transform-style: preserve-3d;
-  transform: rotateY(-8deg) rotateX(2deg);
+  transform: rotateY(-4deg) rotateX(1deg);
   transition: transform 0.5s var(--ease-out);
   cursor: pointer;
-}
-
-.book-card__cover-art:hover {
-  transform: rotateY(0deg) rotateX(0deg) scale(1.02);
-}
-
-.book-spine {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 28px;
-  background: rgba(0,0,0,0.4);
-  border-radius: 2px 0 0 2px;
-}
-
-.book-front {
-  position: absolute;
-  left: 28px;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 0 2px 2px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 2rem;
+  border-radius: 3px;
   overflow: hidden;
 }
 
-.book-front__texture {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 50%);
-  pointer-events: none;
+.book-card__cover-art:hover {
+  transform: rotateY(0deg) rotateX(0deg);
 }
 
-.book-card__cover-art--tequila .book-front {
-  background: linear-gradient(160deg, #1a3d1a 0%, #0d2b0d 40%, #2a1a08 100%);
+.book-cover-photo {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  display: block;
+  border-radius: 3px;
+  /* Shown while image loads / as placeholder tint */
+  background: var(--color-brown-dk);
+  box-shadow:
+    -6px 6px 20px rgba(0,0,0,0.45),
+    0 20px 50px rgba(0,0,0,0.35);
+  transition: box-shadow 0.5s var(--ease-out);
 }
 
-.book-card__cover-art--mezcal .book-front {
-  background: linear-gradient(160deg, #4a2c12 0%, #8b5e3c 50%, #3d2010 100%);
-}
-
-.book-card__cover-art--tequila .book-spine {
-  background: #0d2b0d;
-}
-
-.book-card__cover-art--mezcal .book-spine {
-  background: #3d2010;
-}
-
-.book-front__label {
-  font-family: var(--font-serif);
-  font-size: 1.4rem;
-  line-height: 1.2;
-  color: #fff;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  z-index: 1;
-}
-
-.book-front__subtitle {
-  font-family: var(--font-serif);
-  font-size: 0.85rem;
-  line-height: 1.4;
-  color: rgba(255,255,255,0.7);
-  font-style: italic;
-  margin-top: 0.35rem;
-  z-index: 1;
-}
-
-.book-front__agave {
-  position: absolute;
-  right: 20px;
-  bottom: 50px;
-  opacity: 0.8;
-  z-index: 1;
-}
-
-.book-front__author {
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
-  z-index: 1;
-  margin-top: auto;
+.book-card__cover-art:hover .book-cover-photo {
+  box-shadow:
+    -2px 4px 12px rgba(0,0,0,0.35),
+    0 16px 40px rgba(0,0,0,0.28);
 }
 
 .book-card__info {}
@@ -747,7 +684,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    WRITING / JOURNALISM
    ============================================================= */
 .publications {
-  margin-bottom: 4rem;
   text-align: center;
 }
 
@@ -773,9 +709,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-style: italic;
   color: var(--color-ink-faint);
   transition: color var(--transition);
+  text-decoration: none;
 }
 
-.pub-name:hover { color: var(--color-amber); }
+a.pub-name { cursor: pointer; }
+a.pub-name:hover { color: var(--color-amber); }
 
 .writing__areas {
   display: grid;
@@ -984,15 +922,27 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* =============================================================
-   SPEAKING
+   SERVICES
    ============================================================= */
-.speaking__grid {
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: clamp(48px, 6vw, 80px);
-  align-items: start;
+.services__inner {
+  max-width: 680px;
 }
 
+.services__lead {
+  font-size: 1.1rem;
+  color: var(--color-ink-lt);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.services__offerings {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Legacy alias so .offering still works */
 .speaking__lead {
   font-size: 1.1rem;
   color: var(--color-ink-lt);
