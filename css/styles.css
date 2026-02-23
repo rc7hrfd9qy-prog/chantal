@@ -7,12 +7,12 @@
   /* Colors */
   --color-cream:    #faf7f2;
   --color-cream-2:  #f4ede0;
-  --color-sand:     #e8d5be;
-  --color-warm-tan: #d4b896;
-  --color-amber:    #c4814c;
-  --color-amber-dk: #a86a38;
-  --color-brown:    #8b5e3c;
-  --color-brown-dk: #5c3d22;
+  --color-sand:     #e8d4cc;
+  --color-warm-tan: #d4b8b0;
+  --color-amber:    #c09080;
+  --color-amber-dk: #a07868;
+  --color-brown:    #907068;
+  --color-brown-dk: #6b5048;
   --color-ink:      #2c2117;
   --color-ink-lt:   #4a3728;
   --color-ink-faint:#7a6454;
@@ -20,7 +20,7 @@
   --color-dark-2:   #251c14;
   --color-green:    #4a6741;
   --color-green-lt: #6b8f60;
-  --color-warm-bg:  #f5ece0;
+  --color-warm-bg:  #f5edea;
 
   /* Typography */
   --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
