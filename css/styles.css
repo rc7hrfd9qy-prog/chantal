@@ -20,6 +20,8 @@
   --color-dark-2:   #251c14;
   --color-green:    #4a6741;
   --color-green-lt: #6b8f60;
+  --color-sage-lt:  #bfd0b8;
+  --color-sage-mid: #8aab82;
   --color-warm-bg:  #f5edea;
 
   /* Typography */
@@ -175,13 +177,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .btn--ghost {
-  border: 1.5px solid rgba(255,255,255,0.4);
-  color: #fff;
+  border: 1.5px solid rgba(44,33,23,0.35);
+  color: var(--color-ink);
 }
 
 .btn--ghost:hover {
-  border-color: #fff;
-  background: rgba(255,255,255,0.08);
+  border-color: var(--color-ink);
+  background: rgba(44,33,23,0.07);
+  color: var(--color-ink);
 }
 
 .btn--outline {
@@ -244,12 +247,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-family: var(--font-serif);
   font-size: 1.15rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--color-ink);
   letter-spacing: 0.01em;
   transition: color var(--transition);
 }
 
 .nav__logo:hover { color: var(--color-amber); }
+
+/* Scrolled nav restores white text on its dark background */
+.nav.scrolled .nav__logo { color: #fff; }
+.nav.scrolled .nav__logo:hover { color: var(--color-amber); }
 
 .nav__links {
   display: flex;
@@ -262,7 +269,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.75);
+  color: rgba(44,33,23,0.65);
   transition: color var(--transition);
   position: relative;
 }
@@ -278,8 +285,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: width var(--transition);
 }
 
-.nav__link:hover { color: #fff; }
+.nav__link:hover { color: var(--color-ink); }
 .nav__link:hover::after { width: 100%; }
+
+/* Scrolled nav: white links on dark background */
+.nav.scrolled .nav__link { color: rgba(255,255,255,0.75); }
+.nav.scrolled .nav__link:hover { color: #fff; }
 
 .nav__link--cta {
   background: var(--color-amber);
@@ -307,9 +318,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: block;
   width: 22px;
   height: 1.5px;
-  background: #fff;
+  background: var(--color-ink);
   transition: var(--transition);
 }
+
+.nav.scrolled .nav__hamburger span { background: #fff; }
 
 .nav__hamburger.active span:nth-child(1) {
   transform: translateY(6.5px) rotate(45deg);
@@ -338,24 +351,24 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .hero__bg {
   position: absolute;
   inset: 0;
-  /* Drop in a photo: uncomment and set background-image: url('../images/hero.jpg'); */
-  background-color: var(--color-dark);
-  background-size: cover;
-  background-position: center;
+  /* Gradient pairs pale sage with pale clay — drop in a photo when ready:
+     background-image: url('../images/hero.jpg'); background-size: cover; */
+  background: linear-gradient(145deg, var(--color-sage-lt) 0%, #d8c4bc 55%, #eddad6 100%);
 }
 
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, rgba(28,21,16,0.88) 0%, rgba(55,38,22,0.82) 100%);
+  /* Barely-there tint so text sits cleanly on the light background */
+  background: linear-gradient(160deg, rgba(255,255,255,0.18) 0%, rgba(0,0,0,0.04) 100%);
 }
 
 .hero__pattern {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 72% 28%, rgba(196,129,76,0.13) 0%, transparent 45%),
-    radial-gradient(circle at 22% 72%, rgba(196,129,76,0.07) 0%, transparent 40%);
+    radial-gradient(circle at 75% 25%, rgba(138,171,130,0.18) 0%, transparent 50%),
+    radial-gradient(circle at 20% 75%, rgba(192,144,128,0.14) 0%, transparent 45%);
 }
 
 .hero__content {
@@ -379,7 +392,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: clamp(3.5rem, 8vw, 7.5rem);
   font-weight: 400;
   line-height: 1;
-  color: var(--color-cream);
+  color: var(--color-ink);
   letter-spacing: -0.02em;
   margin-bottom: 1.75rem;
   transition-delay: 0.2s;
@@ -392,7 +405,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .hero__tagline {
   font-size: clamp(1rem, 1.5vw, 1.2rem);
-  color: rgba(250,247,242,0.65);
+  color: var(--color-ink-lt);
   line-height: 1.75;
   max-width: 480px;
   margin-bottom: 2.5rem;
@@ -423,13 +436,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--color-ink-faint);
 }
 
 .hero__scroll-line {
   width: 1px;
   height: 40px;
-  background: linear-gradient(to bottom, #fff, transparent);
+  background: linear-gradient(to bottom, var(--color-ink-faint), transparent);
   animation: scrollPulse 2s ease-in-out infinite;
 }
 
