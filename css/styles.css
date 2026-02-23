@@ -84,6 +84,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--color-cream);
 }
 
+.section--sage {
+  background: #3a5436;
+  color: var(--color-cream);
+}
+
 .section--warm {
   background: var(--color-warm-bg);
 }
@@ -475,10 +480,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    ABOUT
    ============================================================= */
 .about__grid {
-  display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: clamp(48px, 6vw, 96px);
-  align-items: start;
+  max-width: 680px;
 }
 
 .about__image-wrap {
@@ -1240,6 +1242,11 @@ a.pub-name:hover { color: var(--color-amber); }
   padding-block: 3rem;
 }
 
+.footer--sage {
+  background: #2e4430;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
 .footer__inner {
   display: flex;
   align-items: center;
@@ -1304,10 +1311,6 @@ a.pub-name:hover { color: var(--color-amber); }
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .about__grid {
-    grid-template-columns: 280px 1fr;
-    gap: 3rem;
-  }
 
   .books__grid {
     grid-template-columns: 1fr;
@@ -1376,15 +1379,6 @@ a.pub-name:hover { color: var(--color-amber); }
   .nav__hamburger {
     display: flex;
     z-index: 100;
-  }
-
-  .about__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about__image-placeholder {
-    max-width: 260px;
-    margin-inline: auto;
   }
 
   .writing__areas {
