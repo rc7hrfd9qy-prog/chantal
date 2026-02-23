@@ -54,7 +54,7 @@ html {
 body {
   font-family: var(--font-sans);
   color: var(--color-ink);
-  background: var(--color-sage-lt);
+  background: #fff;
   line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -85,7 +85,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .section--sage {
-  background: #afc4a8;
+  background: #fff;
   color: var(--color-ink);
 }
 
@@ -668,7 +668,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   line-height: 1.6;
   margin-bottom: 1rem;
   padding-left: 0.85rem;
-  border-left: 1px solid rgba(44,33,23,0.25);
+  border-left: 1px solid var(--color-sage-lt);
 }
 
 .book-card__badges {
@@ -975,7 +975,7 @@ a.pub-name:hover { color: var(--color-amber); }
 
 .offering {
   padding-left: 1.25rem;
-  border-left: 2px solid var(--color-sand);
+  border-left: 2px solid var(--color-sage-lt);
   transition: border-color var(--transition);
 }
 
@@ -1211,7 +1211,7 @@ a.pub-name:hover { color: var(--color-amber); }
   font-size: 0.9rem;
   color: var(--color-ink-lt);
   padding: 0.65rem 0;
-  border-bottom: 1px solid rgba(44,33,23,0.12);
+  border-bottom: 1px solid var(--color-sage-lt);
   transition: color var(--transition);
 }
 
@@ -1243,8 +1243,8 @@ a.pub-name:hover { color: var(--color-amber); }
 }
 
 .footer--sage {
-  background: var(--color-green);
-  border-top: 1px solid rgba(255,255,255,0.1);
+  background: #fff;
+  border-top: 1px solid var(--color-sage-lt);
 }
 
 .footer__inner {
@@ -1259,13 +1259,13 @@ a.pub-name:hover { color: var(--color-amber); }
 .footer__name {
   font-family: var(--font-serif);
   font-size: 1.1rem;
-  color: var(--color-cream);
+  color: var(--color-ink);
   margin-bottom: 0.3rem;
 }
 
 .footer__tagline {
   font-size: 0.75rem;
-  color: rgba(250,247,242,0.35);
+  color: var(--color-ink-faint);
   letter-spacing: 0.08em;
 }
 
@@ -1279,7 +1279,7 @@ a.pub-name:hover { color: var(--color-amber); }
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(250,247,242,0.45);
+  color: var(--color-ink-faint);
   transition: color var(--transition);
 }
 
@@ -1291,7 +1291,7 @@ a.pub-name:hover { color: var(--color-amber); }
 }
 
 .footer__social-link {
-  color: rgba(250,247,242,0.4);
+  color: var(--color-ink-faint);
   transition: color var(--transition);
 }
 
@@ -1299,9 +1299,9 @@ a.pub-name:hover { color: var(--color-amber); }
 
 .footer__copy {
   font-size: 0.75rem;
-  color: rgba(250,247,242,0.2);
+  color: var(--color-ink-faint);
   text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid var(--color-sage-lt);
   padding-top: 1.5rem;
 }
 
